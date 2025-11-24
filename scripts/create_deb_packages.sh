@@ -5,7 +5,7 @@ set -e
 METAPACKAGE_NAME="adnav"
 METAPACKAGE_DIR="/home/jjustin/gh_ws/src/groundhog/advanced_navigation"
 OUTPUT_DIR="/home/jjustin/gh_ws"
-ROS_DISTRO="jazzy"
+ROS_DISTRO="kilted"
 
 # Define packages in build order (dependencies first)
 PACKAGES=(

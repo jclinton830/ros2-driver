@@ -43,10 +43,10 @@ cd /home/jjustin/gh_ws/src/groundhog/advanced_navigation
 4. Outputs .deb files to `/home/jjustin/gh_ws/`
 
 **Output files:**
-- `ros-jazzy-adnav-interfaces_*.deb`
-- `ros-jazzy-adnav-driver_*.deb`
-- `ros-jazzy-adnav-launch_*.deb`
-- `ros-jazzy-adnav_*.deb`
+- `ros-kilted-adnav-interfaces_*.deb`
+- `ros-kilted-adnav-driver_*.deb`
+- `ros-kilted-adnav-launch_*.deb`
+- `ros-kilted-adnav_*.deb`
 
 ### 2. `deploy_to_apt_repo.sh`
 Uploads packages to the ACFR APT repository and regenerates metadata.
@@ -89,7 +89,7 @@ If you prefer to upload files manually:
 ./scripts/create_deb_packages.sh
 
 # 2. Manually upload
-scp /home/jjustin/gh_ws/ros-jazzy-adnav*.deb \
+scp /home/jjustin/gh_ws/ros-kilted-adnav*.deb \
     jjustin@avocado.acfr.usyd.edu.au:/data/www/EHM/datasets/ubuntu-repo/
 
 # 3. Regenerate metadata
@@ -107,7 +107,7 @@ echo 'deb [arch=amd64 trusted=yes] https://data.acfr.usyd.edu.au/ubuntu-repo/ no
 ### Install Package
 ```bash
 sudo apt update
-sudo apt install ros-jazzy-adnav
+sudo apt install ros-kilted-adnav
 ```
 
 This will install all Advanced Navigation packages (interfaces, driver, and launch files).
@@ -122,7 +122,7 @@ RUN echo 'deb [arch=amd64 trusted=yes] https://data.acfr.usyd.edu.au/ubuntu-repo
     sudo tee /etc/apt/sources.list.d/acfr.list && sudo apt update
 
 # Install Advanced Navigation packages
-RUN sudo apt install -y ros-jazzy-adnav
+RUN sudo apt install -y ros-kilted-adnav
 ```
 
 ## Troubleshooting
@@ -143,7 +143,7 @@ RUN sudo apt install -y ros-jazzy-adnav
 ### Packages not showing up after deployment
 - Run `./scripts/regenerate_repo_metadata.sh`
 - Check server logs for upload issues
-- Verify files exist: `ssh jjustin@avocado.acfr.usyd.edu.au "ls -l /data/www/EHM/datasets/ubuntu-repo/ros-jazzy-adnav*.deb"`
+- Verify files exist: `ssh jjustin@avocado.acfr.usyd.edu.au "ls -l /data/www/EHM/datasets/ubuntu-repo/ros-kilted-adnav*.deb"`
 
 ## Package Versions
 
@@ -160,12 +160,12 @@ Current versions (as of package.xml):
 ├── Packages              # Package index
 ├── Packages.gz           # Compressed package index
 ├── Release               # Repository metadata with checksums
-├── ros-jazzy-*.deb       # All ROS 2 Jazzy packages
+├── ros-kilted-*.deb       # All ROS 2 Kilted packages
 ```
 
 ## Notes
 
 - Packages use Ubuntu 24.04 (Noble) as target distribution
-- ROS 2 distribution: Jazzy
+- ROS 2 distribution: Kilted
 - Build output includes debug symbol packages (*.dbgsym.deb) which are not uploaded
 - The metapackage has no build dependencies but depends on all sub-packages at runtime

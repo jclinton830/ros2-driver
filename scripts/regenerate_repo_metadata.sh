@@ -66,7 +66,7 @@ Suite: noble
 Codename: noble
 Architectures: amd64
 Components: main
-Description: ACFR Ubuntu Repository for ROS 2 Jazzy
+Description: ACFR Ubuntu Repository for ROS 2 Kilted
 Date: $(LANG=C date -u '+%a, %d %b %Y %H:%M:%S +0000')
 EOL
 

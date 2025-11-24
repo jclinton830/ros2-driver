@@ -59,15 +59,35 @@ set(DEPENDENCIES
 
 set(EXECUTABLE_NAME "adnav_driver")
 
-ament_target_dependencies(${PROJECT_NAME}_lib ${DEPENDENCIES})
+target_link_libraries(
+  ${PROJECT_NAME}_lib  
+  rclcpp::rclcpp 
+  ${std_msgs_TARGETS} 
+  ${geometry_msgs_TARGETS}
+  ${sensor_msgs_TARGETS}
+  ${diagnostic_msgs_TARGETS}
+  ${std_srvs_TARGETS}
+  ${tf2_TARGETS}
+  ${adnav_interfaces_TARGETS}
+)
 
 add_executable(${EXECUTABLE_NAME} src/main.cpp)
 target_link_libraries(${EXECUTABLE_NAME} ${PROJECT_NAME}_lib)
-ament_target_dependencies(${EXECUTABLE_NAME} ${DEPENDENCIES})
+target_link_libraries(
+  ${EXECUTABLE_NAME} 
+  rclcpp::rclcpp 
+  ${std_msgs_TARGETS} 
+  ${geometry_msgs_TARGETS}
+  ${sensor_msgs_TARGETS}
+  ${diagnostic_msgs_TARGETS}
+  ${std_srvs_TARGETS}
+  ${tf2_TARGETS}
+  ${adnav_interfaces_TARGETS}
+)
 
 # add_executable(srv_test src/srv_test.cpp)
 # target_link_libraries(srv_test ${PROJECT_NAME}_lib)
-# ament_target_dependencies(srv_test ${DEPENDENCIES})
+# target_link_libraries(srv_test ${DEPENDENCIES})
 
 install(TARGETS ${EXECUTABLE_NAME}
   DESTINATION lib/${PROJECT_NAME}

@@ -7,7 +7,7 @@ LOCAL_DEB_DIR="/home/jjustin/gh_ws"
 REMOTE_SERVER="avocado.acfr.usyd.edu.au"
 REMOTE_USER="jjustin"
 REMOTE_REPO_DIR="/data/www/EHM/datasets/ubuntu-repo"
-ROS_DISTRO="jazzy"
+ROS_DISTRO="kilted"
 
 # Color output
 RED='\033[0;31m'
@@ -116,7 +116,7 @@ Suite: noble
 Codename: noble
 Architectures: amd64
 Components: main
-Description: ACFR Ubuntu Repository for ROS 2 Jazzy
+Description: ACFR Ubuntu Repository for ROS 2 Kilted
 Date: $(LANG=C date -u '+%a, %d %b %Y %H:%M:%S +0000')
 EOL
 
